@@ -22,9 +22,9 @@ connectDB()
             ${process.env.PORT}`);
     })
 })
-.catch(error){
+.catch((error) => {
     console.log("MONGO db connection failed !!! ", err);
-}
+})
 
 
 
