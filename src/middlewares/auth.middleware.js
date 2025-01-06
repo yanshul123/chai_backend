@@ -1,7 +1,7 @@
 import {ApiError} from "../utils/ApiError.js"
-import {asyncHandler} from "../utils/asyncHandler";
+import {asyncHandler} from "../utils/asyncHandler.js";
 import jwt from "jsonwebtoken"
-import {User} from "../model/user.model";
+import {User} from "../models/user.model.js";
 
 
 export const verifyJWT = asyncHandler(async(req, res,
@@ -21,7 +21,7 @@ export const verifyJWT = asyncHandler(async(req, res,
     
             if(!user){
                 // next_video
-                throw neww ApiError(401, "Invalid Access Token")
+                throw new ApiError(401, "Invalid Access Token")
             }
             req.user = user;
             next()
